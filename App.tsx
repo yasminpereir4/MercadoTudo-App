@@ -1,12 +1,24 @@
-import { StatusBar } from "expo-status-bar";
-import { Text, View } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
+import { StatusBar } from "react-native";
+import "react-native-gesture-handler";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 import "./global.css";
+import { AuthContextProvider } from "./src/contexts/AuthContext";
+import { Routes } from "./src/routes";
 
 export default function App() {
   return (
-    <View className="flex-1 bg-[#2A488C] justify-center items-center">
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <GestureHandlerRootView className="flex-1">
+      <StatusBar
+        translucent
+        barStyle="dark-content"
+        backgroundColor="transparent"
+      />
+      <NavigationContainer>
+        <AuthContextProvider>
+          <Routes />
+        </AuthContextProvider>
+      </NavigationContainer>
+    </GestureHandlerRootView>
   );
 }
