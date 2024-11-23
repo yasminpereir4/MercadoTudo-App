@@ -86,7 +86,7 @@ export const Home: React.FC<HomeProps> = () => {
         }
       />
       <View>
-        <Text className="text-[#FFFFFF] px-6 mt-6 font-medium text-3xl">
+        <Text className="text-[#FFFFFF] px-6 font-medium text-3xl">
           Destaques
         </Text>
         <FlatList
